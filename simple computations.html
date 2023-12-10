@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(img/Calculator.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url(img/Web\ 1920\ –\ 1.png);
+    min-height: 100%;
+}
+
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+        .content {
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="index.html" class="w3-bar-item w3-button w3-wide">< maplekoi<b>.calculators</b></a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">fahrto<b>Cel</b> Pro</a>
+        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> maple</a>
+        <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> leaves</a>
+        <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> canada</a>
+        <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> contact the Koi</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  
+    <div class="content">
+        <label for="fahrenheit">Fahrenheit to Celsius: </label>
+        <input id="fahrenheit" name="fahrenheit" type="number" oninput="fahrToCel()">
+        <p id="celRes"></p><br><br>
+
+        <label for="celsius">Celsius to Fahrenheit: </label>
+        <input id="celsius" name="celsius" type="number" oninput="celToFahr()">
+        <p id="fahRes"></p><br><br>
+
+        <label for="meters">Meter/s to Feet: </label>
+        <input id="meters" name="meters" type="number" oninput="metToFeet()">
+        <p id="feetRes"></p><br><br>
+
+        <label for="feet">Feet to Meter/s: </label>
+        <input id="feet" name="feet" type="number" oninput="feetToMet()">
+        <p id="meterRes"></p><br><br>
+    </div>
+
+    <script>
+        function fahrToCel() {
+            var fah = document.getElementById("fahrenheit").value * 1;
+            var cRes = (fah - 32) * 5 / 9;
+            document.getElementById("celRes").innerHTML = 'The result is: ' + cRes.toFixed(4) + ' in celsius';
+        }
+
+        function celToFahr() {
+            var cel = document.getElementById("celsius").value * 1;
+            var fahrenheitRes = (cel * 9) / 5 + 32;
+            document.getElementById("fahRes").innerHTML = 'The result is: ' + fahrenheitRes.toFixed(4) + ' in fahrenheit';
+        }
+
+        function metToFeet() {
+            var met = document.getElementById("meters").value * 1;
+            var fitRes = met * 3.281;
+            document.getElementById("feetRes").innerHTML = 'The result is: ' + fitRes.toFixed(4) + ' in feet';
+        }
+
+        function feetToMet() {
+            var feet = document.getElementById("feet").value * 1;
+            var mRes = feet / 3.281;
+            document.getElementById("meterRes").innerHTML = 'The result is: ' + mRes.toFixed(4) + ' in meters';
+        }
+    </script>
+
+</body>
+
+</html>
