@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(mapletaxpro.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Inter", sans-serif;}
+
+        .w3-bar .w3-button {
+            padding: 19px;
+        }
+
+        .content {
+            text-align: center;
+            background: none;
+            padding: 20px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        label, input {
+            font-size: 1.2em;
+        }
+
+        input {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0px solid #ccc;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+        button {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-wide">maplekoi<b>.calculators</b> home</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">maple<b>Tax</b></a>
+                <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> apps</a>
+                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> talk with Koi</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <input type="number" id="income" placeholder="Enter your income">
+    <br><br>
+    <button onclick="calculateTax()">Calculate Tax</button>
+    <br><br>
+    <div id="tax"></div>
+
+    <script>
+        function calculateTax() {
+            var income = parseFloat(document.getElementById("income").value);
+            var tax;
+
+            if (income <= 250000) {
+                tax = 0;
+            } else if (income <= 400000) {
+                tax = (income - 250000) * 0.20;
+            } else if (income <= 800000) {
+                tax = 30000 + (income - 400000) * 0.25;
+            } else if (income <= 2000000) {
+                tax = 130000 + (income - 800000) * 0.30;
+            } else if (income <= 8000000) {
+                tax = 490000 + (income - 2000000) * 0.32;
+            } else {
+                tax = 2410000 + (income - 8000000) * 0.35;
+            }
+
+            var resultElement = document.getElementById("tax");
+            resultElement.innerHTML = "Income Tax: " + tax.toFixed(2);
+        }
+    </script>
+</body>
+</html>

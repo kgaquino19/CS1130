@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(enthbkg.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Inter", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url(img/Web\ 1920\ –\ 1.png);
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 19px;
+        }
+
+        .content {
+            text-align: center;
+            background: none;
+            padding: 20px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input {
+            font-size: 1.2em;
+        }
+
+        input {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0px solid #ccc;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-wide">maplekoi<b>.calculators</b> home</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">the <b>Enth</b></a>
+                <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> apps</a>
+                <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> contact the Koi</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-8 text-left">
+
+        <label for="nth">Your income: </label>
+        <input type="text" id="nth" name="nth" autocomplete="off"><br><br>
+
+        <input type="button" value="Submit" onclick="factorial()"><br><br>
+
+        <label for="factor" id="factor">Factorials: </label><br><br>
+        <label for="sum" id="sum">Sum: </label><br><br>
+        <label for="mean" id="mean">Avg: </label><br><br>
+
+        <p id="endli"></p>
+
+        <script>
+            function factorial(){
+                var i, f, r, a, m, n;
+
+                i = 1;
+                f = 1;
+                r = 1;
+                a = 0;
+                m = 0;
+
+            
+                n = document.getElementById("nth").value*1;
+
+                while (i <= n) {
+                    f = f * i;
+                    i++;
+                }
+                document.getElementById("factor").innerHTML = 'Factorial: ' +f;
+
+                i = 1;
+
+                do {
+                    r = r * i;
+                    a = a + r;
+                    i++;
+                } 
+                while (i <= n);
+                document.getElementById("sum").innerHTML = 'Sum: ' +a;
+
+                m = a / n;
+                document.getElementById("mean").innerHTML = 'Average: ' +m;
+            
+            }
+        </script>
+    </div>
+</body>
+</html>

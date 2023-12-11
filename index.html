@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>maple.koi calculators</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url(Home.png);
+    min-height: 100%;
+}
+
+.w3-bar .w3-button {
+    padding: 19px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">maplekoi<b>.calculators</b></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">fahrto<b>Cel</b> Pro</a>
+      <a href="#mapletax" class="w3-bar-item w3-button">maple<b>Tax</b> Pro</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-user"></i> about</a>
+      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-th"></i> apps</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> talk with Koi</a>
+    </div>
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">fahrto<b>Cel</b> Pro</a>
+  <a href="#mapletax" onclick="w3_close()" class="w3-bar-item w3-button">maple<b>Tax</b> Pro</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">about</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">apps</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">talk with Koi</a>
+</nav>
+
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-black" style="padding:60px">
+    <span class="w3-jumbo w3-hide-small"><b>Hello</b></span><br>
+    <span class="w3-large">showcasing only the cleanest</span><br>
+    <span class="w3-large">calculator programs, <b>made by Koi.</b></span>
+    <p><a href="#team" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off" style="border-radius: 20px;">Explore web<b>Apps</b></a></p>
+    <p><a href="#contact" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off" style="border-radius: 20px;">talk with <b>Koi</b></a></p>
+  </div> 
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 60px">
+    <a href="https://www.facebook.com/akino.kaatooooo/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/koi.gee/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.pinterest.ph/aquino10kuhrt/" target="_blank"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  </div>
+</header>
+
+<!-- fahrtoCEL -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+  <h1 class="w3-center">fahrto<b>Cel</b> Pro</h3>
+  <p class="w3-center w3-large"><b>the.maple </b>company's finest. <b>made by Koi.</b></p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">made for Desktop</p>
+      <p>There exists a consistent design excellence that surpasses discriminatory distinctions, making it flawless in any desktop environment.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-th w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Straightfoward</p>
+      <p>
+        No need for mode selection; convenience is effortlessly within reach.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Exquisite</p>
+      <p>Meticulously designed to offer visual comfort, it genuinely embodies the essence of a premium device.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Made for Ease</p>
+      <p>Delivering a user experience that prioritizes ease, providing an interface that prioritizes accessibility and functionality.</p>
+    </div>
+  </div>
+</div>
+
+<!-- meet mapletax -->
+<div class="w3-container w3-light-grey" style="padding:128px 16px" id="mapletax">
+  <div class="w3-row-padding">
+    <div class="w3-col m6">
+      <h1>meet maple<b>Tax</b> Pro</h1>
+      <p>Estimate income tax liability by considering income sources, deductions, and applicable tax rates. Everything in one click with maple<b>Tax</b>.</p>
+      <p><a href="#mapletax" class="w3-button w3-black">Coming Soon</a></p>
+    </div>
+    <div class="w3-col m6">
+      <img class="w3-image w3-round-large" src="Mapletaxintro.png" alt="Buildings" width="700" height="394">
+    </div>
+  </div>
+</div>
+
+<!-- calculator picker -->
+<div class="w3-container" style="padding:128px 16px" id="team">
+  <h1 class="w3-center">Explore web<b>Apps</b></h1>
+  <p class="w3-center w3-large">simple calculators crafted with visual comfort in mind</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="fahrtoCelogo.png" alt="fahrtoCel" style="width:100%">
+        <div class="w3-container">
+          <h2>fahrto<b>Cel</b> Pro</b></h2>
+          <p class="w3-opacity">Simple Computations Calculator</p>
+          <p>Input values and convert them from Fahrenheit to Celsius, Celsius to Fahrenheit, meters to feet, and feet to meters, all in one page.</p>
+          <a href="simple computations.html" class="w3-button w3-light-grey w3-block">Launch
+          </a>          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="Thenth.png" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h2>the <b>Enth</b></h2>
+          <p class="w3-opacity">Nth Factorial, Sum, and Average Calculator</p>
+          <p>Compute the factorial of a given number, calculate the sum of a series of values, and determine the average of a set of numerical inputs.</p>
+          <a href="nth factorial sum avg.html" class="w3-button w3-light-grey w3-block">Launch
+          </a>          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="mapletax.png" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h2>maple<b>Tax</b></h2>
+          <p class="w3-opacity">Income Tax Calculator</p>
+          <p>Estimate income tax liability by considering income sources, deductions, and applicable tax rates. Everything in one click with maple<b>Tax</b>.</p>
+          <a href="AQUINO INCOME TAX CALCULATOR.html" class="w3-button w3-light-grey w3-block">Launch
+          </a>          
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="rollerlogo.png" alt="Dan" style="width:100%">
+        <div class="w3-container">
+          <h2>Rollercoaster <b>Pro</b></h2>
+          <p class="w3-opacity">Simple Payroll Calculator</p>
+          <p>Simplify wage calculations, ensure accuracy in gross pay, deductions, and net pay. A user-friendly tool for quick and efficient payroll management.</p>
+          <a href="payroll.html" class="w3-button w3-light-grey w3-block">Launch
+          </a>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- hello koi -->
+<div class="w3-container w3-light-grey" style="padding: 128px 16px; text-align: center;" id="contact">
+  <img class="w3-image w3-round-large" src="koi.png" alt="Kuhrt Aquino" width="300" height="300" style="margin: 0 auto;">
+  <h3 class="w3-center">meet <b>Koi</b></h3>
+  <p class="w3-center w3-large">Kuhrt G. Aquino | InTec 1-B | Class 4-101</p><br>
+  <p class="w3-center w3-large">Let's get in touch, send me a message</p>
+  <a href="https://www.facebook.com/akino.kaatooooo/" class="w3-button w3-light-grey w3-block">
+    <button class="w3-button w3-black"><i class="fa fa-facebook-official"></i> Contact</button>
+  </a>
+  <div style="margin-top: 48px;">
+    <!-- Your form goes here -->
+    <img src="Footer.png" class="w3-image w3-greyscale" style="width: 100%; margin-top: 48px;" alt="Footer Image">
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-black"><i class="fa fa-arrow-up w3-margin-right"></i>Back to the beginning</a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/akino.kaatooooo/" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/koi.gee/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://www.pinterest.ph/aquino10kuhrt/" target="_blank"><i class="fa fa-pinterest-p w3-hover-opacity"></i></a>
+    <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  </div>
+  <p>designed by <b>Kuhrt Aquino</b></p>
+  <p>w3.css with <b>koiUI</b> Pro | a premium experience for the most basic apps</p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(rollercoaster.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Inter", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            line-height: 1.8;
+        }
+
+        .bgimg-1 {
+            background-position: center;
+            background-size: cover;
+            background-image: url(img/Web\ 1920\ –\ 1.png);
+            min-height: 100%;
+        }
+
+        .w3-bar .w3-button {
+            padding: 19px;
+        }
+
+        .content {
+            text-align: center;
+            background: none;
+            padding: 20px;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label, input {
+            font-size: 1.2em;
+        }
+
+        input {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: inline-block;
+            margin-bottom: 15px;
+            width: 48%;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0px solid #ccc;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+
+        button.centered {
+            display: block;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="index.html" class="w3-bar-item w3-button w3-wide">maplekoi<b>.calculators</b> home</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">Rollercoaster <b>Pro</b></a>
+                <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-th"></i> apps</a>
+                <a href="index.html#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> talk with Koi</a>
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+                onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="EName">Employee Name</label>
+            <input id="EName" name="EName" type="text">
+        </div>
+
+        <div class="form-group">
+            <label for="Days">Days of Work</label>
+            <input id="Days" name="daysW" type="number">
+        </div>
+
+        <div class="form-group">
+            <label for="DRate">Daily Rate</label>
+            <input id="DRate" name="Drate" type="number">
+        </div>
+
+        <div class="form-group">
+            <label for="DAmount">Deduction Amount</label>
+            <input id="DAmount" name="Damount" type="number">
+        </div>
+
+        <button onclick="addTabRow()" class="centered">Add to Roll</button>
+
+        <div class="form-group">
+            <label for="delEmployee">Enter Item to delete</label>
+            <input id="delEmployee" name="delEmployee" type="number">
+            <button onclick="deleteEmployee()" class="centered">Delete</button>
+        </div>
+
+        <table id="payroll">
+            <tr>
+                <th>Item</th>
+                <th>Employee Name</th>
+                <th>Days Worked</th>
+                <th>Daily Rate</th>
+                <th>Gross Pay</th>
+                <th>Deduction Amount</th>
+                <th>Net Pay</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var no = 1;
+
+        function addTabRow() {
+            var tabHook = document.getElementById("payroll");
+            var newRow = tabHook.insertRow(-1);
+            newRow.id = "row" + no;
+            var cells = [];
+
+            for (var i = 0; i < 7; i++) {
+                cells[i] = newRow.insertCell(i);
+            }
+
+            var days = document.getElementById("Days").value * 1;
+            var rate = document.getElementById("DRate").value * 1;
+            var grossPay = days * rate;
+            var deduction = document.getElementById("DAmount").value * 1;
+            var netPay = grossPay - deduction;
+
+            cells[0].innerHTML = no;
+            cells[1].innerHTML = document.getElementById("EName").value;
+            cells[2].innerHTML = days;
+            cells[3].innerHTML = rate;
+            cells[4].innerHTML = grossPay;
+            cells[5].innerHTML = deduction;
+            cells[6].innerHTML = netPay;
+
+            no++;
+        }
+
+        function deleteEmployee() {
+            var delno = document.getElementById("delEmployee").value;
+            var rowId = "row" + delno;
+            var rowToRemove = document.getElementById(rowId);
+
+            if (rowToRemove) {
+                rowToRemove.remove();
+            }
+        }
+    </script>
+</body>
+
+</html>
